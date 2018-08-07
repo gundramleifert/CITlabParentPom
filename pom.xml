@@ -58,20 +58,6 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>versions-maven-plugin</artifactId>
-                <version>2.5</version>
-                <configuration>
-                    <allowMajorUpdates>false</allowMajorUpdates>
-                    <allowSnapshots>true</allowSnapshots>
-                    <excludes>
-                        <exclude>.*[-_\.](alpha|Alpha|ALPHA|b|beta|Beta|BETA|rc|RC|M|EA)[-_\.]?[0-9]*</exclude>
-                    </excludes>
-                    <!--<rulesUri>classpath:///versionrules.xml</rulesUri>-->
-                </configuration>
-            </plugin>
-
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19.1</version>
@@ -214,19 +200,14 @@
             </plugins>
         </pluginManagement>
     </build>
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.3</version>
-                <configuration>
-                    <show>public</show>
-                    <additionalparam>-Xdoclint:none</additionalparam>
-                </configuration>
-            </plugin>
-        </plugins>
-    </reporting>
+    <repositories>
+        <repository>
+            <id>UIBK</id>
+            <name>UIBK</name>
+            <url>http://dbis-halvar.uibk.ac.at/artifactory/libs-release</url>
+        </repository>
+    </repositories>
+
     <distributionManagement>
         <repository>
             <id>dbis-halvar-artifactory</id>
